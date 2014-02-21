@@ -1,0 +1,39 @@
+{
+    "name": "palmabit/multilanguage",
+    "description": "",
+    "version" : "0.1.0",
+    "license" : "proprietary",
+    "authors": [
+        {
+            "name": "jacopo",
+            "email": "j.beschi@palmabit.com",
+            "homepage": "http://www.jacopobeschi.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.1.*"
+        },
+    "require-dev": {
+        "mockery/mockery": "0.9.0",
+        "orchestra/testbench": "2.1.*"
+    },
+    "repositories": [
+    {
+        "type": "composer",
+        "url": "http://95.110.212.212/package_web"
+    },
+    {
+        "type": "vcs",
+        "url": "git://github.com/orchestral/phpseclib.git"
+    }],
+    "autoload": {
+        "psr-0": {
+            "Palmabit\\Multilanguage\\": "src/"
+        },
+        "psr-4": {
+            "Palmabit\\Multilanguage\\Tests\\" : "tests/"
+        }
+    },
+    "minimum-stability": "stable"
+}
