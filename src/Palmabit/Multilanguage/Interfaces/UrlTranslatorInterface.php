@@ -1,4 +1,4 @@
-<?php namespace Multilingua\Interfaces;
+<?php namespace Palmabit\Multilanguage\Interfaces;
 /**
  * Interface UrlTranslatorInterface
  *

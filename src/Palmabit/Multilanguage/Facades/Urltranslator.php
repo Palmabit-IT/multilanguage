@@ -1,4 +1,4 @@
-<?php namespace Multilingua\Facades;
+<?php namespace Palmabit\Multilanguage\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

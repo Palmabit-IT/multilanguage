@@ -1,4 +1,4 @@
-<?php  namespace Multilingua\Helper;
+<?php  namespace Palmabit\Multilanguage\Helper;
 /**
  * Class TranslateHelper
  *
@@ -14,7 +14,7 @@ class TranslateHelper
     protected static $slug_field = "slug";
 
     /**
-     * Traduce lo slug in base alla lingua corrente
+     * Translates slug based on the current language
      * @param      $slug
      * @param      $table
      * @param bool $is_admin se vedere lingua admin o lingua client

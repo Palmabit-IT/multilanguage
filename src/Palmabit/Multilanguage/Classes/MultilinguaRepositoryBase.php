@@ -1,22 +1,22 @@
-<?php namespace Multilingua\Classes;
+<?php namespace Palmabit\Multilanguage\Classes;
 /**
  * Class MultilinguaRepositoryBase
  *
  * @author jacopo beschi j.beschi@palmabit.com
  */
-use Multilingua\Traits\LanguageHelper;
-use Multilingua\Interfaces\MultilinguaRepositoryInterface;
+use Palmabit\Multilanguage\Traits\LanguageHelper;
+use Palmabit\Multilanguage\Interfaces\MultilinguaRepositoryInterface;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 abstract class MultilinguaRepositoryBase implements MultilinguaRepositoryInterface{
     use LanguageHelper;
     /**
-     * Se il repository viene usato come gestione admin
+     * If the repo will be used for admin area or not
      * @var Boolean
      */
     protected $is_admin;
     /**
-     * Il nome del model da usare
+     * The name of the model to use
      * @var String
      */
     protected $model;
@@ -51,7 +51,7 @@ abstract class MultilinguaRepositoryBase implements MultilinguaRepositoryInterfa
     }
 
     /**
-     * Aggiorna un model
+     * Updates a model
      *
      * @param       $id
      * @param array $data
@@ -69,7 +69,7 @@ abstract class MultilinguaRepositoryBase implements MultilinguaRepositoryInterfa
     }
 
     /**
-     * Crea un model
+     * Creates a model
      *
      * @param array $data
      * @return mixed
@@ -84,7 +84,7 @@ abstract class MultilinguaRepositoryBase implements MultilinguaRepositoryInterfa
     }
 
     /**
-     * Rimuove la risorsa dal db
+     * Deletes data
      *
      * @param $id
      * @return mixed
@@ -98,7 +98,7 @@ abstract class MultilinguaRepositoryBase implements MultilinguaRepositoryInterfa
 
 
     /**
-     * Ottiene la risorsa partendo dallo slug lingua
+     * Obtain the resource given the slug lingua
      *
      * @param $slug_lingua
      * @return mixed

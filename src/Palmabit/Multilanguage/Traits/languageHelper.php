@@ -1,10 +1,10 @@
-<?php namespace Multilingua\Traits;
+<?php namespace Palmabit\Multilanguage\Traits;
 use L;
 
 trait LanguageHelper
 {
     /**
-     * Ottiene la lingua corrente
+     * Obtain the current lang
      *
      * @return String lingua
      */

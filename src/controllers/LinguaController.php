@@ -1,4 +1,4 @@
-<?php namespace Multilingua\Controllers;
+<?php namespace Palmabit\Multilanguage\Controllers;
 
 use BaseController;
 use Input;

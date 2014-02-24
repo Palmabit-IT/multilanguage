@@ -1,16 +1,16 @@
-<?php namespace Multilingua\Classes;
+<?php namespace Palmabit\Multilanguage\Classes;
 
-use Multilingua\Interfaces\action;
-use Multilingua\Interfaces\parametri;
-use Multilingua\Interfaces\se;
-use Multilingua\Interfaces\UrlTranslatorInterface;
+use Palmabit\Multilanguage\Interfaces\action;
+use Palmabit\Multilanguage\Interfaces\parametri;
+use Palmabit\Multilanguage\Interfaces\se;
+use Palmabit\Multilanguage\Interfaces\UrlTranslatorInterface;
 use URL;
 use L;
 
 class UrlTranslatorIlluminate implements UrlTranslatorInterface{
 
     /**
-     * Traduce url da action name
+     * Translates url from action name
      *
      * @param nome     action
      * @param $params  parametri
@@ -23,7 +23,7 @@ class UrlTranslatorIlluminate implements UrlTranslatorInterface{
     }
 
     /**
-     * Traduce url da to name
+     * Translates a to url
      *
      * @param nome     action
      * @param $params  parametri
@@ -36,7 +36,7 @@ class UrlTranslatorIlluminate implements UrlTranslatorInterface{
     }
 
     /**
-     * Generatore base di url che si appoggia ad URL
+     * Base url translator
      * @param      $type
      * @param      $name
      * @param null $params

@@ -1,11 +1,11 @@
-<?php namespace Multilingua\Classes;
+<?php namespace Palmabit\Multilanguage\Classes;
 /**
  * Class Gestore
  *
  * @package Auth
  * @author jacopo beschi
  */
-use Multilingua\Interfaces\GestoreInterface;
+use Palmabit\Multilanguage\Interfaces\GestoreInterface;
 use Lang;
 use App;
 use Config;
@@ -14,23 +14,23 @@ use Session;
 class GestoreIlluminate implements GestoreInterface{
 
     /**
-     * Nome variabile da salvare in sessione
+     * Variable name to save in sessione
      * @var String
      */
     protected $session_var;
     /**
-     * Nome variabile salvata in sessione per il pannello admin
+     * Variable name to save in session for admin panel handling
      * @var String
      */
     protected $session_var_admin;
 
     public function __construct()
     {
-        $this->session_var = Config::get("opzioni_lingue.session_var");
-        $this->session_var_admin = Config::get("opzioni_lingue.session_var_admin");
+        $this->session_var = Config::get("multilanguage::lang_options.session_var");
+        $this->session_var_admin = Config::get("multilanguage::lang_options.session_var_admin");
     }
     /**
-     * Traduce una stringa nella lingua corrente
+     * Translate a string to the current language
      *
      * @param String $stringa
      * @param String $file file dal quale prelevare la traduzione
@@ -45,59 +45,59 @@ class GestoreIlluminate implements GestoreInterface{
     }
 
     /**
-     * Ottene la lingua corrente: default se non è settata
+     * Obtain the current language:default if not set
      *
      * @return String
      */
     public function get()
     {
-        return Session::get($this->session_var, Config::get("opzioni_lingue.default") );
+        return Session::get($this->session_var, Config::get("multilanguage::lang_options.default") );
     }
 
     /**
-     * Ottene la lingua corrente nel pannello admin: default se non è settata
+     * Obtain the current admin language:default if not set
      *
      * @return String
      */
     public function get_admin()
     {
-        return Session::get($this->session_var_admin, Config::get("opzioni_lingue.default") );
+        return Session::get($this->session_var_admin, Config::get("multilanguage::lang_options.default") );
     }
 
     /**
-     * Setta la lingua corrente
+     * Sets the current client language
      *
      * @param String $lingua
      * @return mixed
      */
-    public function set($lingua)
+    public function set($lang)
     {
-        Session::put($this->session_var, $lingua);
+        Session::put($this->session_var, $lang);
     }
 
     /**
-     * Setta la lingua corrente nel pannello admin
+     * Sets the current admin language
      *
      * @param String $lingua
      * @return mixed
      */
-    public function set_admin($lingua)
+    public function set_admin($lang)
     {
-        Session::put($this->session_var_admin, $lingua);
+        Session::put($this->session_var_admin, $lang);
     }
 
     /**
-     * Ottiene la lista di tutte le lingue
+     * Obtain the list of all supported languages
      *
      * @return Array
      */
     public function get_lista()
     {
-        return Config::get('lista_lingue');
+        return Config::get('multilanguage::lang_list');
     }
 
     /**
-     * Aggiorna il locale di laravel
+     * Updates Laravel locale
      */
     public function aggiornaLocale()
     {
@@ -109,8 +109,8 @@ class GestoreIlluminate implements GestoreInterface{
      */
     public function get_descrizione_admin()
     {
-        $prefisso = $this->get_admin();
-        return Config::get('lista_lingue.'.$prefisso);
+        $prefix = $this->get_admin();
+        return Config::get('multilanguage::lang_list.'.$prefix);
     }
 
     /**
@@ -118,7 +118,7 @@ class GestoreIlluminate implements GestoreInterface{
      */
     public function get_descrizione()
     {
-        $prefisso = $this->get();
-        return Config::get('lista_lingue.'.$prefisso);
+        $prefix = $this->get();
+        return Config::get('multilanguage::lang_list.'.$prefix);
     }
 }

@@ -1,6 +1,9 @@
 <?php namespace Palmabit\Multilanguage;
 
+use App;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\AliasLoader;
+use Palmabit\Multilanguage\Classes\GestoreIlluminate;
 
 class MultilanguageServiceProvider extends ServiceProvider {
 
@@ -21,12 +24,12 @@ class MultilanguageServiceProvider extends ServiceProvider {
 		$this->package('palmabit/multilanguage');
 
         // include le route
-        require_once __DIR__."/../routes.php";
+        require __DIR__."/../../routes.php";
         // include i filtri
-        require_once __DIR__."/../filters.php";
-        // include il form helper
-        require_once __DIR__."/../Helper/FormHelper.php";
-	}
+        require __DIR__."/../../filters.php";
+
+        $this->registerAliases();
+    }
 
 	/**
 	 * Register the service provider.
@@ -35,9 +38,9 @@ class MultilanguageServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-        App::bind('multilingua', function()
+        App::bind('multilanguage', function()
         {
-            return new GestoreIlluminate('app/Multilingua/Config');
+            return new GestoreIlluminate();
         });
         App::bind('urltranslator', function()
         {
@@ -54,5 +57,10 @@ class MultilanguageServiceProvider extends ServiceProvider {
 	{
 		return array();
 	}
+
+    protected function registerAliases()
+    {
+        AliasLoader::getInstance()->alias("L", 'Palmabit\Multilanguage\Facades\Multilanguage');
+    }
 
 }

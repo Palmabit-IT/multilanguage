@@ -1,4 +1,4 @@
-<?php namespace Palmabit\Multilingua\Tests;
+<?php namespace Palmabit\Multilanguage\Tests;
 /**
  * Test TestCase
  *
@@ -18,10 +18,6 @@ class TestCase extends \Orchestra\Testbench\TestCase  {
         return [
                 'Palmabit\Multilanguage\MultilanguageServiceProvider',
             ];
-    }
-
-    protected function getPackageAliases()
-    {
     }
 
 }
