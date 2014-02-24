@@ -28,7 +28,6 @@ class UrlTranslatorIlluminate implements UrlTranslatorInterface{
      * @param nome     action
      * @param $params  parametri
      * @return mixed
-     * @todo test
      */
     public function to($name, $params = null)
     {
