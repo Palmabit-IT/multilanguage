@@ -8,7 +8,7 @@ trait LanguageHelper
      *
      * @return String lingua
      */
-    public function getLingua()
+    public function getLang()
     {
         return $this->is_admin ? L::get_admin() : L::get();
     }
@@ -16,7 +16,7 @@ trait LanguageHelper
     /**
      * {@inheritdoc}
      */
-    public function generaSlugLingua($input)
+    public function generateSlugLang($input)
     {
         return $input["slug"];
     }

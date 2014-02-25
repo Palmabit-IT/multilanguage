@@ -3,21 +3,21 @@
 interface MultilinguaRepositoryInterface
 {
     /**
-     * Ottiene la lingua
+     *
      * @return String lingua
      */
-    public function getLingua();
+    public function getLang();
     /**
-     * Ottiene la risorsa partendo dallo slug lingua
+     * Search by slug lang
      * @param $slug_lingua
      * @return mixed
      * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
      */
-    public function findBySlugLingua($slug_lingua);
+    public function findBySlugLang($slug_lingua);
     /**
-     * Genera lo slug lingua dall'input
+     * Generate slug lang given the input
      * @oaram $input
      * @return String
      */
-    public function generaSlugLingua($input);
+    public function generateSlugLang($input);
 }

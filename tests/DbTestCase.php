@@ -14,7 +14,6 @@ class DbTestCase extends TestCase
 
         $artisan = $this->app->make( 'artisan' );
 
-        $this->cleanDb();
         $this->populateDB($artisan);
     }
 
@@ -26,6 +25,9 @@ class DbTestCase extends TestCase
         $this->assertTrue(true);
     }
 
+    /**
+     * @deprecated used for old mysql test
+     */
     protected function cleanDb()
     {
         $manager = DB::getDoctrineSchemaManager();
@@ -49,17 +51,25 @@ class DbTestCase extends TestCase
         // reset base path to point to our package's src directory
         $app['path.base'] = __DIR__ . '/../src';
 
+        $mysql_conn = array(
+            'driver'    => 'mysql',
+            'host'      => 'localhost',
+            'database'  => 'palmabit_base_test',
+            'username'  => 'root',
+            'password'  => 'root',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+        );
+
+        $sqlite_conn = array(
+            'driver'    => 'sqlite',
+            'database'  => ':memory:',
+            'prefix'    => '',
+        );
+
         $app['config']->set('database.default', 'testbench');
-        $app['config']->set('database.connections.testbench', array(
-                        'driver'    => 'mysql',
-                        'host'      => 'localhost',
-                        'database'  => 'palmabit_base_test',
-                        'username'  => 'root',
-                        'password'  => 'root',
-                        'charset'   => 'utf8',
-                        'collation' => 'utf8_unicode_ci',
-                        'prefix'    => '',
-        ));
+        $app['config']->set('database.connections.testbench', $sqlite_conn);
     }
 
     /**
