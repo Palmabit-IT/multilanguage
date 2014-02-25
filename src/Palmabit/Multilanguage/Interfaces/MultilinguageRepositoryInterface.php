@@ -1,6 +1,6 @@
 <?php namespace Palmabit\Multilanguage\Interfaces;
 
-interface MultilinguaRepositoryInterface
+interface MultilinguageRepositoryInterface
 {
     /**
      *
