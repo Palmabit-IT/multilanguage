@@ -37,6 +37,9 @@
         },
         "files": [
             "src/Palmabit/Multilanguage/Helper/FormHelper.php"
+        ],
+        "classmap": [
+            "src/controllers"
         ]
     },
     "minimum-stability": "stable"

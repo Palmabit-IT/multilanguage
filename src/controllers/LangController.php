@@ -5,9 +5,9 @@ use Input;
 use Redirect;
 use L;
 
-class LinguaController extends BaseController {
+class LangController extends BaseController {
 
-    public function swapLingua()
+    public function swapLang()
 	{
         $lingua = Input::get('lang');
         $is_admin = Input::get('is_admin');

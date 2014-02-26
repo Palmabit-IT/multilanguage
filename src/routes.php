@@ -1,3 +1,3 @@
 <?php
 
-Route::any('/lang/swap','Multilingua\Controllers\LinguaController@swapLingua');
+Route::any('/lang/swap','Palmabit\Multilanguage\Controllers\LangController@swapLang');
