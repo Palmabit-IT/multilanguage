@@ -61,6 +61,7 @@ class MultilanguageServiceProvider extends ServiceProvider {
     protected function registerAliases()
     {
         AliasLoader::getInstance()->alias("L", 'Palmabit\Multilanguage\Facades\Multilanguage');
+        AliasLoader::getInstance()->alias("URLT", 'Palmabit\Multilinguage\Facades\Urltranslator');
     }
 
 }
