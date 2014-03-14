@@ -4,3 +4,4 @@ il tutto è contenuto nella directory eccetto:
 - il filtro globale che setta la lingua a runtime: app filters.php: vedi before che inizializza la lingua ogni chiamata all'app
 - inoltre c'è un filtro che cambia lingua in base all'argomento fornito in input
 - nel routes.php mettere: Route::group( ['before'=>'MultilinguaSwapFiltro', 'prefix' => '{lang?}'], function(){});
+e poi nella route tradurla e mettere nella traduzione il file delle traduzioni ad esempio:     Route::get(L::t('login'), function(){});
