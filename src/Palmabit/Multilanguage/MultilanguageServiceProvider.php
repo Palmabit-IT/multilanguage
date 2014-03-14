@@ -4,6 +4,7 @@ use App;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\AliasLoader;
 use Palmabit\Multilanguage\Classes\GestoreIlluminate;
+use Palmabit\Multilanguage\Classes\UrlTranslatorIlluminate;
 
 class MultilanguageServiceProvider extends ServiceProvider {
 
@@ -61,7 +62,7 @@ class MultilanguageServiceProvider extends ServiceProvider {
     protected function registerAliases()
     {
         AliasLoader::getInstance()->alias("L", 'Palmabit\Multilanguage\Facades\Multilanguage');
-        AliasLoader::getInstance()->alias("URLT", 'Palmabit\Multilinguage\Facades\Urltranslator');
+        AliasLoader::getInstance()->alias("URLT", 'Palmabit\Multilanguage\Facades\Urltranslator');
     }
 
 }

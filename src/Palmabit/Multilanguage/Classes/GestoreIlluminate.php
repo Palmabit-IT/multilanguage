@@ -38,6 +38,7 @@ class GestoreIlluminate implements GestoreInterface{
      */
     public function t($stringa, $file = "template")
     {
+        $this->updateLocale();
         $key = "{$file}.{$stringa}";
         $transl = Lang::get($key);
         // se non trova la traduzione ritorna la stringa
@@ -99,7 +100,7 @@ class GestoreIlluminate implements GestoreInterface{
     /**
      * Updates Laravel locale
      */
-    public function aggiornaLocale()
+    public function updateLocale()
     {
         App::setLocale($this->get());
     }

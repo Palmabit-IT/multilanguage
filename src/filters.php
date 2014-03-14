@@ -10,7 +10,7 @@ Route::filter('MultilinguaSwapFilter', function(){
         {
             // updates the language
             L::set($lingua);
-            L::aggiornaLocale();
+            L::updateLocale();
         }
     }
     else

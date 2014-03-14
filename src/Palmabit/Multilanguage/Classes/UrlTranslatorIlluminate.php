@@ -19,7 +19,9 @@ class UrlTranslatorIlluminate implements UrlTranslatorInterface{
      */
     public function action($name, $params = null)
     {
-        return $this->base("action", $name, $params);
+        var_dump(L::t($name));
+        dd(L::get());
+        return $this->base("action", L::t($name), $params);
     }
 
     /**
@@ -31,7 +33,7 @@ class UrlTranslatorIlluminate implements UrlTranslatorInterface{
      */
     public function to($name, $params = null)
     {
-        return $this->base("to", $name, $params);
+        return $this->base("to", L::t($name), $params);
     }
 
     /**
