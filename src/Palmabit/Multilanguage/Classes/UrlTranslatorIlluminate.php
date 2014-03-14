@@ -19,7 +19,6 @@ class UrlTranslatorIlluminate implements UrlTranslatorInterface{
      */
     public function action($name, $params = null)
     {
-        var_dump(L::t($name));
         return $this->base("action", L::t($name), $params);
     }
 
