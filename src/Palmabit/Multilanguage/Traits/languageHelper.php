@@ -1,6 +1,7 @@
 <?php namespace Palmabit\Multilanguage\Traits;
 use L;
 
+
 trait LanguageHelper
 {
     /**
