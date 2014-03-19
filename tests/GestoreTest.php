@@ -1,7 +1,7 @@
 <?php namespace Palmabit\Multilanguage\Tests;
 
 use Mockery as m;
-use L;
+use L, App;
 use Lang;
 use Config;
 
@@ -34,6 +34,7 @@ class GestoreTest extends TestCase {
     {
         $stringa = "str";
         $file = "f";
+        App::shouldReceive('setLocale');
         Lang::shouldReceive('get')->once()->with("{$file}.{$stringa}");
 
         L::t($stringa,$file);
