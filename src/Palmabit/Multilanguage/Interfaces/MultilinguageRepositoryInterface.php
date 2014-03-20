@@ -27,5 +27,5 @@ interface MultilinguageRepositoryInterface
      * @param $object
      * @return mixed
      */
-    public function updateSlugLang($input, $object);
+    public function updateSlugLang(&$input, $object);
 }
