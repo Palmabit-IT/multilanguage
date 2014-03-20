@@ -16,7 +16,7 @@ class LangController extends BaseController {
         else L::set($lingua);
 
         // redirect con blocco swap automatico lingua
-        return Redirect::to('/');
+        return $is_admin ? Redirect::back() :Redirect::to('/');
     }
 
 }
