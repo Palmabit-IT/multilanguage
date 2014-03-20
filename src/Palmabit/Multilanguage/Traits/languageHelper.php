@@ -27,6 +27,6 @@ trait LanguageHelper
      */
     public function updateSlugLang(&$input, $object)
     {
-        if (isset($input['slug_lang']) && (! is_null($object->slug_lang) ) unset($input['slug_lang']);
+        if (isset($input['slug_lang']) && (! is_null($object->slug_lang)) ) unset($input['slug_lang']);
     }
 }
