@@ -20,4 +20,12 @@ interface MultilinguageRepositoryInterface
      * @return String
      */
     public function generateSlugLang($input);
+
+    /**
+     * Removes slug lang for updates incase already exists
+     * @param $input
+     * @param $object
+     * @return mixed
+     */
+    public function updateSlugLang($input, $object);
 }
