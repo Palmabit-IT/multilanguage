@@ -36,4 +36,5 @@ trait LanguageHelper
             unset($input['slug_lang']);
         }
     }
+    
 }
