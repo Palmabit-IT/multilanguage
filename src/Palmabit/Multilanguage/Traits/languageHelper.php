@@ -27,6 +27,14 @@ trait LanguageHelper
      */
     public function updateSlugLang(&$input, $object)
     {
-        if (isset($input['slug_lang']) && (! is_null($object->slug_lang)) ) unset($input['slug_lang']);
+        if (empty($object->slug) && isset($input['slug_lang']) )
+        {
+            $input['slug_lang'] = $this->generateSlugLang($input);
+        }
+        else
+        {
+            unset($input['slug_lang']);
+        }
     }
+
 }
