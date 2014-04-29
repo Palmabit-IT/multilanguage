@@ -6,10 +6,10 @@
  * @todo test
  */
 use Palmabit\Multilanguage\Traits\LanguageHelper;
-use Palmabit\Multilanguage\Interfaces\MultilinguaRepositoryInterface;
+use Palmabit\Multilanguage\Interfaces\MultilinguageRepositoryInterface;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-abstract class MultilinguaRepositoryBase implements MultilinguaRepositoryInterface{
+abstract class MultilinguaRepositoryBase implements MultilinguageRepositoryInterface{
     use LanguageHelper;
     /**
      * If the repo will be used for admin area or not
@@ -22,9 +22,10 @@ abstract class MultilinguaRepositoryBase implements MultilinguaRepositoryInterfa
      */
     protected $model;
 
-    public function __construct($is_admin = true)
+    public function __construct($is_admin = true, $model = null)
     {
         $this->is_admin = $is_admin;
+        if($model) $this->model = $model;
     }
 
     /**
@@ -35,7 +36,7 @@ abstract class MultilinguaRepositoryBase implements MultilinguaRepositoryInterfa
     public function all()
     {
         $model = $this->model;
-        return $model::whereLang($this->getLingua())->get()->all();
+        return $model::whereLang($this->getLang())->get()->all();
     }
 
     /**
@@ -79,7 +80,7 @@ abstract class MultilinguaRepositoryBase implements MultilinguaRepositoryInterfa
     {
         $model = $this->model;
         $data["slug_lingua"] = $data["slug_lingua"] ? $data["slug_lingua"] : $this->generaSlugLingua($data);
-        $data["lang"] = $this->getLingua();
+        $data["lang"] = $this->getLang();
 
         return $model::create($data);
     }
@@ -109,7 +110,7 @@ abstract class MultilinguaRepositoryBase implements MultilinguaRepositoryInterfa
     {
         $model = $this->model;
         $obj = $model::whereSlugLingua($slug_lingua)
-            ->whereLang($this->getLingua())
+            ->whereLang($this->getLang())
             ->get();
 
         if($obj->isEmpty()) throw new ModelNotFoundException;
