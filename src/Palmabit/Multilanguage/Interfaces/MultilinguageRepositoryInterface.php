@@ -13,7 +13,7 @@ interface MultilinguageRepositoryInterface
      * @return mixed
      * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
      */
-    public function findBySlugLingua($slug_lingua);
+    public function findBySlugLang($slug_lingua);
     /**
      * Generate slug lang given the input
      * @oaram $input
