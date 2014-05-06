@@ -1,6 +1,5 @@
 <?php namespace Palmabit\Multilanguage\Traits;
-use L;
-
+use L, App;
 
 trait LanguageHelper
 {
@@ -17,17 +16,9 @@ trait LanguageHelper
     /**
      * {@inheritdoc}
      */
-    public function generateSlugLang($input)
-    {
-        return $input["slug"];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function updateSlugLang(&$input, $object)
     {
-        if (empty($object->slug) && isset($input['slug_lang']) )
+        if ($this->needsToUpdateSlugLang($input, $object))
         {
             $input['slug_lang'] = $this->generateSlugLang($input);
         }
@@ -37,4 +28,46 @@ trait LanguageHelper
         }
     }
 
+    /**
+     * @param $input
+     * @param $object
+     * @return bool
+     */
+    private function needsToUpdateSlugLang (&$input, $object) {
+        return $this->slugLangIsNotObsolete($input, $object) &&
+        (! $this->slugLangAlreadyExistsWithThatLanguage($input));
+    }
+
+    /**
+     * @param $input
+     * @return bool
+     */
+    private function slugLangAlreadyExistsWithThatLanguage (&$input) {
+        $product_repository = App::make('product_repository');
+        try {
+            $product_repository->findBySlugLang($this->generateSlugLang($input));
+        }
+        catch (NotFoundException $e) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * @param $input
+     * @param $object
+     * @return bool
+     */
+    private function slugLangIsNotObsolete (&$input, $object) {
+        return empty($object->slug) && isset($input['slug_lang']);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function generateSlugLang($input)
+    {
+        return $input["slug"];
+    }
 }
