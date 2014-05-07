@@ -1,5 +1,6 @@
 <?php namespace Palmabit\Multilanguage\Traits;
 use L, App;
+use Palmabit\Library\Exceptions\NotFoundException;
 
 trait LanguageHelper
 {

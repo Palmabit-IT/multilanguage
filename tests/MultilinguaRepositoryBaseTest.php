@@ -93,7 +93,9 @@ class MultilinguaRepositoryBaseTest extends TestCase {
 
 }
 
-class MultilinguaRepoStub extends MultilinguaRepositoryBase{}
+class MultilinguaRepoStub extends MultilinguaRepositoryBase{
+    public function findBySlugLang($slug_lang){}
+}
 
 class ModelStub {
   protected $return_value;
