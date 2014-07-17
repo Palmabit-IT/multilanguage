@@ -123,4 +123,9 @@ class GestoreIlluminate implements GestoreInterface{
         $prefix = $this->get();
         return Config::get('multilanguage::lang_list.'.$prefix);
     }
+
+    public function getDefault()
+    {
+        return Config::get('multilanguage::lang_options.default');
+    }
 }
