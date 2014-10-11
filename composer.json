@@ -1,13 +1,22 @@
 {
     "name": "palmabit/multilanguage",
-    "description": "",
-    "version" : "0.1.0",
+    "description": "This package helps handling of language and translation with laravel framework",
     "license" : "proprietary",
     "authors": [
         {
-            "name": "jacopo",
+            "name": "jacopo beschi",
             "email": "j.beschi@palmabit.com",
             "homepage": "http://www.jacopobeschi.com"
+        },
+        {
+            "name" : "francesco falanga",
+            "email" : "f.falanga@palmabit.com",
+            "homepage" : "http://www.palmabit.com"
+        },
+        {
+            "name" : "alessandro sarzina",
+            "email" : "a.sarzina@palmabit.com",
+            "homepage" : "http://www.palmabit.com"
         }
     ],
     "require": {
@@ -26,7 +35,7 @@
     }],
     "autoload": {
         "psr-0": {
-            "Palmabit\\Multilanguage\\": "src/"
+            "Palmabit\\Multilanguage\\": "src/Palmabit/Multilanguage"
         },
         "psr-4": {
             "Palmabit\\Multilanguage\\Tests\\" : "tests/"
