@@ -40,7 +40,8 @@
             "Palmabit\\Multilanguage\\Tests\\" : "tests/"
         },
         "classmap": [
-            "src/controllers"
+            "src/controllers",
+            "src/commands"
         ]
     },
     "minimum-stability": "stable"
