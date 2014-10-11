@@ -2,7 +2,7 @@
 
 ##description
 
-This package add multilanguage capability to your laravel app.
+This package adds multilanguage capability to your laravel app.
 
 ## Installation
 
