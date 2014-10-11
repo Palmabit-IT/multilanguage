@@ -11,10 +11,10 @@ return [
   |
   */
   "languages"         => [
-          "it" => "italiano",
-          "en" => "inglese",
-          "de" => "tedesco",
-          "fr" => "francese"
+          "it" => "italian",
+          "en" => "english",
+          "de" => "german",
+          "fr" => "french"
   ],
   /*
   |--------------------------------------------------------------------------
