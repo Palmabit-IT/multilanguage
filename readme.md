@@ -1,7 +1,5 @@
 #Multilanguage
 
-[![Build Status](https://travis-ci.org/Palmabit-IT/multilanguage.png)](https://travis-ci.org/Palmabit-IT/multilanguage)
-
 ##description
 
 This package adds multilanguage capability to your laravel app.
