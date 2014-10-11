@@ -1,15 +1,11 @@
 <?php  namespace Palmabit\Multilanguage\Tests;
 
-use Palmabit\Authentication\Classes\User;
-use Palmabit\Library\Classes\Helper;
 use Palmabit\Multilanguage\Classes\LanguageLocator;
-use Palmabit\Tests\Helpers\UserStubGenerator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
 
 class LanguageLocatorTest extends TestCase {
-  use UserStubGenerator;
 
   protected $anonymous_default_lang = 'it';
   protected $session_name = 'current_lang';
@@ -55,10 +51,7 @@ class LanguageLocatorTest extends TestCase {
    * @param $preferred
    */
   protected function mockAuthReturnUserWithLang($preferred) {
-    $logged_user = User::create(User::$USER_COMPANY);
-    Helper::hydratateObject($this->getCompanyStub(), $logged_user);
-    $logged_user->preferred_language = $preferred;
-
+    $logged_user = (object)["preferred_language" => $preferred];
     Auth::shouldReceive('user')->andReturn($logged_user);
   }
 
