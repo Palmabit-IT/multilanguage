@@ -1,3 +1,4 @@
 <?php
 
-Route::any('/lang/swap','Palmabit\Multilanguage\Controllers\LangController@swapLang');
+Route::post('/lang/change/{new_lang}','Palmabit\Multilanguage\Controllers\LangController@change');
+Route::post('/lang/current',function(){return L::get();});

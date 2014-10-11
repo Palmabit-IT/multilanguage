@@ -1,22 +1,11 @@
 <?php namespace Palmabit\Multilanguage\Controllers;
 
-use BaseController;
-use Input;
-use Redirect;
+use Illuminate\Routing\Controller;
 use L;
 
-class LangController extends BaseController {
+class LangController extends Controller {
 
-    public function swapLang()
-	{
-        $lingua = Input::get('lang');
-        $is_admin = Input::get('is_admin');
-
-        if($is_admin) L::set_admin($lingua);
-        else L::set($lingua);
-
-        // redirect con blocco swap automatico lingua
-        return $is_admin ? Redirect::back() :Redirect::to('/');
-    }
-
+  public function change($new_lang) {
+    L::set($new_lang);
+  }
 }

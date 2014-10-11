@@ -1,57 +1,42 @@
 <?php namespace Palmabit\Multilanguage\Interfaces;
 
-interface GestoreInterface
-{
-    /**
-     * Traduce una stringa nella lingua corrente
-     * @param String $stringa
-     * @param String $file file dal quale prelevare la traduzione
-     * @return String
-     */
-    public function t($stringa, $file);
+interface GestoreInterface {
+  /**
+   * Translate a given string
 
-    /**
-     * Ottene la lingua corrente: default se non è settata
-     * @return String
-     */
-    public function get();
+   *
+*@param String $str
+   * @param String $filename
+   * @return String
+   */
+  public function t($str, $filename);
 
-    /**
-     * Ottiene la lingua corrente utilizzata nel pannello amministrazione
-     * @return mixed
-     */
-    public function get_admin();
+  /**
+   * Obtain the current language
+   *
+   * @return String
+   */
+  public function get();
 
-    /**
-     * Setta la lingua corrente
-     * @param String $lingua
-     * @return mixed
-     */
-    public function set($lingua);
-
-    /**
-     * Setta la lingua corrente nel pannello amministrazione
-     * @param String $lingua
-     * @return mixed
-     */
-    public function set_admin($lingua);
-
-
-    /**
-     * Ottiene la lista di tutte le lingue
-     * @return Array
-     */
-    public function get_lista();
-
-    /**
-     * Ottiene la descrizione della lingua
-     * @return mixed
-     */
-    public function get_descrizione();
-
-    /**
-     * Ottiene la descrizione della lingua admin
-     * @return mixed
-     */
-    public function get_descrizione_admin();
+  /**
+   * Override the current language
+   *
+   * @param String $lang
+   * @return mixed
+   */
+  public function set($lang);
+  /**
+   * Obtain all the languages as an array key value
+   * where $key is the two letter symbol and value is the
+   * long description e.g. italiano
+   * @return Array
+   */
+  public function getList();
+  /**
+   * Obtain the default fallback language to use
+   * ad description when doesn't find the
+   * current language description
+   * @return mixed
+   */
+  public function getDefault();
 }
