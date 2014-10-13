@@ -25,12 +25,12 @@ class MultilanguageServiceProvider extends ServiceProvider {
   public function boot() {
     $this->package('palmabit/multilanguage');
 
-    require __DIR__ . "/../../routes.php";
-    require __DIR__ . "/../../filters.php";
-    require __DIR__ . "/../../composer.php";
-
     $this->registerAliases();
     $this->updateLocales();
+
+    require __DIR__ . "/../../filters.php";
+    require __DIR__ . "/../../routes.php";
+    require __DIR__ . "/../../composer.php";
   }
 
   /**
