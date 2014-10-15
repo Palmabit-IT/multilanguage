@@ -12,7 +12,7 @@ class UrlWrapper {
     $this->translator = App::make('multilanguage');
   }
 
-  public function to($url, $translate = true, $language = null) {
+  public function to($url, $translate = false, $language = null) {
     $url = $this->removeStartingSlash($this->clearExistingLanguageStrings($url));
 
     return $translate ? $this->generator->to($this->getCurrentLanguage($language) . '/' . $url) : $this->generator->to($url);

@@ -27,8 +27,8 @@ class UrlWrapperTest extends TestCase {
   public function prependLanguagePrefixWithUrlTo() {
     $expected_url = $this->laravel_url->to('/it/uri');
 
-    $this->assertEquals($expected_url, $this->url->to('/uri'));
-    $this->assertEquals($expected_url, $this->url->to('uri'));
+    $this->assertEquals($expected_url, $this->url->to('/uri', true));
+    $this->assertEquals($expected_url, $this->url->to('uri', true));
 
     L::set('en');
 
