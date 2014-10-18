@@ -20,13 +20,13 @@ The simplest method of installation is to install it as a global Composer packag
 In order to see the docs install the laravel package example app: https://github.com/Palmabit-IT/package-examples
 
 
-## API REST (Version 1)
+## API REST
 
 ### GET current language
 
     http://<url>/api/v1/lang
 
-the response is for example:
+response:
 
     {
         "lang": "en"
@@ -36,7 +36,7 @@ the response is for example:
 
     http://<url>/api/v1/lang/<new-lang>
 
-the response is for example:
+response:
 
     {
         "success": true
@@ -47,13 +47,13 @@ the response is for example:
 
     http://<url>/api/v1/lang
 
-in POST mode the API needs parameters as in this example:
+parameters:
 
     {
         "lang": "en"
     }
 
-the response is for example:
+response:
 
     {
         "success": true
