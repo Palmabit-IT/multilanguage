@@ -1,5 +1,6 @@
 <?php namespace Palmabit\Multilanguage\Classes;
 
+use Palmabit\Multilanguage\Classes\Exceptions\LanguageNotPresentException;
 use Palmabit\Multilanguage\Interfaces\GestoreInterface;
 use Lang, App, Config, Session;
 
@@ -65,11 +66,16 @@ class HandlerIlluminate implements GestoreInterface {
   /**
    * Sets the current client language
    *
-   * @param String $lingua
-   * @return mixed
+   * @param String $lang
+   * @return mixed|String
+   * @throws Exceptions\LanguageNotPresentException
    */
   public function set($lang) {
-    return $this->locator->set($lang);
+    if (!array_key_exists($lang, $this->getList())) {
+      throw new LanguageNotPresentException;
+    }
+    $this->locator->set($lang);
+    return $lang;
   }
 
   /**

@@ -18,3 +18,44 @@ The simplest method of installation is to install it as a global Composer packag
 ## Docs
 
 In order to see the docs install the laravel package example app: https://github.com/Palmabit-IT/package-examples
+
+
+## API REST (Version 1)
+
+### GET current language
+
+    http://<url>/api/v1/lang
+
+the response is for example:
+
+    {
+        "lang": "en"
+    }
+
+### PUT new language
+
+    http://<url>/api/v1/lang/<new-lang>
+
+the response is for example:
+
+    {
+        "success": true
+        "lang": "en"
+    }
+
+### POST new language
+
+    http://<url>/api/v1/lang
+
+in POST mode the API needs parameters as in this example:
+
+    {
+        "lang": "en"
+    }
+
+the response is for example:
+
+    {
+        "success": true
+        "lang": "en"
+    }
