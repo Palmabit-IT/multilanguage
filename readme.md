@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/Palmabit-IT/multilanguage.png)](https://travis-ci.org/Palmabit-IT/multilanguage)
 
-##description
+##Description
 
 This package adds multilanguage capability to your laravel app.
 
@@ -32,7 +32,7 @@ the response is for example:
         "lang": "en"
     }
 
-### PUT new language
+### Set new language (PUT)
 
     http://<url>/api/v1/lang/<new-lang>
 
@@ -43,7 +43,7 @@ the response is for example:
         "lang": "en"
     }
 
-### POST new language
+### Set new language (POST)
 
     http://<url>/api/v1/lang
 
