@@ -24,7 +24,7 @@ class HandlerIlluminate implements GestoreInterface {
   public function __construct($locator = null) {
     $this->locator = $locator ?: new LanguageLocator();
     //@todo remove this and use the given language in input to save a product
-    $this->session_var_admin = Config::get("multilanguage::lang_options.session_var_admin");
+    $this->session_var_admin = "current_lang_admin";
   }
 
   /**

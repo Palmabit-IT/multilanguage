@@ -37,6 +37,11 @@ trait LegacyCatalogHelperTrait {
    */
   public function set_admin($lang)
   {
-    Session::put($this->session_var_admin, $lang);
+    Session::set($this->session_var_admin, $lang);
+  }
+
+  public function get_lista()
+  {
+    return $this->getList();
   }
 } 
