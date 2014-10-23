@@ -1,9 +1,11 @@
 <?php namespace Palmabit\Multilanguage\Classes;
 
+use Palmabit\Multilanguage\Classes\Traits\LegacyCatalogHelperTrait;
 use Palmabit\Multilanguage\Interfaces\GestoreInterface;
 use Lang, App, Config, Session;
 
 class HandlerIlluminate implements GestoreInterface {
+  use LegacyCatalogHelperTrait;
 
   protected $locator;
   /**
