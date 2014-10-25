@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/Palmabit-IT/multilanguage.png)](https://travis-ci.org/Palmabit-IT/multilanguage)
 
-##description
+##Description
 
 This package adds multilanguage capability to your laravel app.
 
@@ -18,3 +18,44 @@ The simplest method of installation is to install it as a global Composer packag
 ## Docs
 
 In order to see the docs install the laravel package example app: https://github.com/Palmabit-IT/package-examples
+
+
+## API REST
+
+### GET current language
+
+    http://<url>/api/v1/lang
+
+response:
+
+    {
+        "lang": "en"
+    }
+
+### Set new language (PUT)
+
+    http://<url>/api/v1/lang/<new-lang>
+
+response:
+
+    {
+        "success": true
+        "lang": "en"
+    }
+
+### Set new language (POST)
+
+    http://<url>/api/v1/lang
+
+parameters:
+
+    {
+        "lang": "en"
+    }
+
+response:
+
+    {
+        "success": true
+        "lang": "en"
+    }

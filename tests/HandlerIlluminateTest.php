@@ -34,8 +34,9 @@ class HandlerIlluminateTest extends TestCase {
    * @test
    */
   public function canOverrideGetValue() {
+    $this->setConfigStub();
     $this->handler->setLocator(new LanguageLocator());
-    $expected_value = "pk";
+    $expected_value = "it";
     $this->handler->set($expected_value);
 
     $this->assertEquals($expected_value, $this->handler->get());
@@ -64,12 +65,11 @@ class HandlerIlluminateTest extends TestCase {
 
     $this->assertEquals($key, $this->handler->t($key, $filename));
   }
-  
+
   /**
    * @test
    **/
-  public function canReturnEmptyStringOnTranslateIfStrictModeIsEnabled()
-  {
+  public function canReturnEmptyStringOnTranslateIfStrictModeIsEnabled() {
     $key = "fake";
     $filename = "filename";
     Lang::shouldReceive('get')->once()->with("{$filename}.{$key}")->andReturn("{$filename}.{$key}");
@@ -97,7 +97,38 @@ class HandlerIlluminateTest extends TestCase {
     $default_fallback_language = "zz";
     Config::set('multilanguage::base.default_fallback_language', $default_fallback_language);
 
-    $this->assertEquals( $default_fallback_language, $this->handler->getDefault() );
+    $this->assertEquals($default_fallback_language, $this->handler->getDefault());
+  }
+
+  /**
+   * @test
+   * @expectedException Palmabit\Multilanguage\Classes\Exceptions\LanguageNotPresentException
+   **/
+  public function canHandleExceptionIfLangNotExist() {
+    $this->setConfigStub();
+    $this->handler->setLocator(new LanguageLocator());
+    $expected_value = "pk";
+    $this->handler->set($expected_value);
+  }
+
+  /**
+   * @test
+   **/
+  public function canReturnNewLangWhenSetted() {
+    $this->setConfigStub();
+    $this->handler->setLocator(new LanguageLocator());
+    $expected_value = "it";
+
+    $this->assertEquals($this->handler->set($expected_value), $expected_value);
+  }
+
+  protected function setConfigStub() {
+    Config::set('multilanguage::base.languages', [
+            "it" => "italian",
+            "en" => "english",
+            "de" => "german",
+            "fr" => "french"
+    ]);
   }
 }
 
