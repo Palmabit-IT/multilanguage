@@ -56,7 +56,7 @@ class MultilanguageServiceProvider extends ServiceProvider {
    * @return array
    */
   public function provides() {
-    return array ();
+    return array ('Way\Generators\GeneratorsServiceProvider');
   }
 
   protected function registerAliases() {

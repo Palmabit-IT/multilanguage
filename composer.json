@@ -4,9 +4,9 @@
   "license": "mit",
   "authors": [
     {
-      "name": "giuseppe aremare",
-      "email": "g.aremare@palmabit.com",
-        "homepage": "http://www.palmabit.com"
+      "name": "jacopo beschi",
+      "email": "j.beschi@palmabit.com",
+      "homepage": "http://www.jacopobeschi.com"
     },
     {
       "name": "francesco falanga",
@@ -27,7 +27,8 @@
     "mockery/mockery": "0.9.0",
     "orchestra/testbench": "2.2.*",
     "doctrine/dbal": ">=2.4",
-    "fzaninotto/faker": ">=1.4"
+    "fzaninotto/faker": ">=1.4",
+    "way/generators": "~2.0"
   },
   "repositories": [
     {
