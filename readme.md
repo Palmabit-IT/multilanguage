@@ -10,7 +10,7 @@ This package adds multilanguage capability to your laravel app.
 
 The simplest method of installation is to install it as a global Composer package:
 
-1. composer require `"palmabit/multilanguage 1.0.*"`
+1. composer require `"palmabit/multilanguage v1.1"`
 2. Add to your service providers the following string: `'Palmabit\Multilanguage\MultilanguageServiceProvider'`
 3. Run the following command: `"php artisan asset:publish"`
 
